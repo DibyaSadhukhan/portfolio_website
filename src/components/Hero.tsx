@@ -40,7 +40,7 @@ export default function Hero() {
                         </div>
                         <div className="mt-6 pt-2 overflow-x-auto whitespace-nowrap">
                             <p><span className="text-purple-400">import</span> <span className="text-blue-200">profile</span> <span className="text-purple-400">as</span> <span className="text-blue-200">pf</span></p><br />
-                            <p><span className="text-blue-400">x</span> <span className="text-pink-500">=</span> <span className="text-green-400">"{portfolioData.role}"</span></p><br />
+                            <p><span className="text-blue-400">x</span> <span className="text-pink-500">=</span> <span className="text-white-400">pf.role()</span></p><br />
                             <p><span className="text-purple-400">def</span> <span className="text-blue-200">myfunc</span>():</p>
                             <p className="pl-6"><span className="text-purple-400">global</span> x; x <span className="text-pink-500">=</span> <span className="text-green-400">"{portfolioData.name}"</span></p>
                             <p className="pl-6"><span className="text-purple-4000">print</span>(<span className="text-green-400">"Hello, I'm "</span> <span className="text-pink-500">+</span> x)</p>

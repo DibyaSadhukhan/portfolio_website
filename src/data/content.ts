@@ -8,7 +8,10 @@ export const portfolioData = {
     experience: 3,
     description: "AI and Data Engineer experienced in developing machine learning systems, LLM-powered applications, and scalable data pipelines. Skilled in building intelligent automation platforms, deploying NLP models, and integrating AI solutions into production workflows. Strong expertise in Python, ML frameworks, and cloud-based data systems.",
     github: "https://github.com/DibyaSadhukhan",
-    linkedin: "https://linkedin.com/in/dibyasadhukhan"
+    linkedin: "https://linkedin.com/in/dibyasadhukhan",
+    email: "dibyasadhukhan@gmail.com",
+    phone: "+91933096039",
+    upwork: "https://www.upwork.com/freelancers/~01966c01f20da5e99a"
 };
 export const icons = {
     laptop: "/laptop.svg",
