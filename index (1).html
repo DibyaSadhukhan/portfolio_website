@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Kan3an — modern bilingual developer portfolio: English/Arabic UI, light &amp; dark themes, RTL, scroll-spy nav, interactive hero, skills, services, experience, projects, testimonials, FAQ &amp; contact. Built with HTML, CSS &amp; vanilla JavaScript.">
+    <meta name="author" content="Mohammad Abu Sakour (Kan3an)">
+    <meta name="copyright" content="All rights reserved — Mohammad Abu Sakour (Kan3an).">
+    <meta name="theme-color" content="#080806">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kan3an — Developer Portfolio V2 · Bilingual Interactive CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="v2-body" data-theme="light" data-lang="en" data-dir="ltr">
+    <a href="#main" class="skip-link"><span data-text-en="Skip to content" data-text-ar="تخطي إلى المحتوى">Skip to content</span></a>
+
+    <div class="loader-screen" id="loader" aria-hidden="true" role="presentation">
+        <div class="loader-inner">
+            <div class="loader-terminal" aria-hidden="true">
+                <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">init portfolio --v2</span></div>
+                <div class="term-line term-muted">compiling assets…</div>
+                <div class="term-line term-ok">ready.</div>
+            </div>
+            <div class="loader-bar-wrap">
+                <div class="loader-bar" id="loaderBar"></div>
+            </div>
+            <div class="loader-pct" id="loaderPct">0%</div>
+        </div>
+    </div>
+
+    <div class="bg-orbs" aria-hidden="true">
+        <span class="orb orb-a"></span>
+        <span class="orb orb-b"></span>
+        <span class="orb orb-c"></span>
+    </div>
+    <div class="grid-noise" aria-hidden="true"></div>
+    <div class="bg-grid-3d" aria-hidden="true"></div>
+    <div class="bg-vignette" aria-hidden="true"></div>
+    <div class="bg-shine" aria-hidden="true"></div>
+
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a href="#home" class="brand" id="brandHome" aria-label="Home">
+                <span class="brand-bracket">&lt;</span>
+                <span class="brand-text">Dev</span>
+                <span class="brand-bracket">/&gt;</span>
+                <span class="brand-badge">V2</span>
+            </a>
+
+            <nav class="nav-desktop" aria-label="Primary">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <iconify-icon class="ico ico-nav" icon="mdi:home" width="20" height="20" aria-hidden="true"></iconify-icon>
+                    <span class="nav-text" data-text-en="Home" data-text-ar="الرئيسية">Home</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <iconify-icon class="ico ico-nav" icon="mdi:account-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+                    <span class="nav-text" data-text-en="About" data-text-ar="عني">About</span>
+                </a>
+                <div class="nav-dropdown" id="navDesktopDropdown">
+                    <button type="button" class="nav-dropdown__trigger" id="navExploreTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="navExploreMenu" data-aria-en="Open sections menu" data-aria-ar="فتح قائمة الأقسام" data-aria-close-en="Close sections menu" data-aria-close-ar="إغلاق قائمة الأقسام" aria-label="Open sections menu">
+                        <iconify-icon class="ico ico-nav" icon="mdi:view-dashboard-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span class="nav-text" data-text-en="Explore" data-text-ar="استكشف">Explore</span>
+                        <iconify-icon class="ico nav-dropdown__chev" icon="mdi:chevron-down" width="18" height="18" aria-hidden="true"></iconify-icon>
+                    </button>
+                    <div class="nav-dropdown__panel" id="navExploreMenu" role="menu" aria-labelledby="navExploreTrigger" hidden>
+                        <div class="nav-dropdown__cols">
+                            <div class="nav-dropdown__col">
+                                <p class="nav-dropdown__eyebrow" data-text-en="Expertise" data-text-ar="التخصص">Expertise</p>
+                                <div class="nav-dropdown__links">
+                                    <a href="#skills" class="nav-link nav-dropdown__link" role="menuitem" data-section="skills">
+                                        <iconify-icon class="ico ico-nav" icon="mdi:layers-triple" width="20" height="20" aria-hidden="true"></iconify-icon>
+                                        <span class="nav-text" data-text-en="Skills" data-text-ar="المهارات">Skills</span>
+                                    </a>
+                                    <a href="#services" class="nav-link nav-dropdown__link" role="menuitem" data-section="services">
+                                        <iconify-icon class="ico ico-nav" icon="mdi:handshake-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+                                        <span class="nav-text" data-text-en="Services" data-text-ar="الخدمات">Services</span>
+                                    </a>
+                                    <a href="#experience" class="nav-link nav-dropdown__link" role="menuitem" data-section="experience">
+                                        <iconify-icon class="ico ico-nav" icon="mdi:briefcase-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+                                        <span class="nav-text" data-text-en="Experience" data-text-ar="الخبرة">Experience</span>
+                                    </a>
+                                    <a href="#process" class="nav-link nav-dropdown__link" role="menuitem" data-section="process">
+                                        <iconify-icon class="ico ico-nav" icon="mdi:chart-timeline-variant" width="20" height="20" aria-hidden="true"></iconify-icon>
+                                        <span class="nav-text" data-text-en="Process" data-text-ar="آلية العمل">Process</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="nav-dropdown__col">
+                                <p class="nav-dropdown__eyebrow" data-text-en="Showcase" data-text-ar="الأعمال">Showcase</p>
+                                <div class="nav-dropdown__links">
+                                    <a href="#projects" class="nav-link nav-dropdown__link" role="menuitem" data-section="projects">
+                                        <iconify-icon class="ico ico-nav" icon="mdi:rocket-launch-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+                                        <span class="nav-text" data-text-en="Projects" data-text-ar="المشاريع">Projects</span>
+                                    </a>
+                                    <a href="#testimonials" class="nav-link nav-dropdown__link" role="menuitem" data-section="testimonials">
+                                        <iconify-icon class="ico ico-nav" icon="mdi:format-quote-close" width="20" height="20" aria-hidden="true"></iconify-icon>
+                                        <span class="nav-text" data-text-en="Testimonials" data-text-ar="آراء">Testimonials</span>
+                                    </a>
+                                    <a href="#faq" class="nav-link nav-dropdown__link" role="menuitem" data-section="faq">
+                                        <iconify-icon class="ico ico-nav" icon="mdi:help-circle-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+                                        <span class="nav-text" data-text-en="FAQ" data-text-ar="أسئلة">FAQ</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contact" class="nav-link nav-link--cta" data-section="contact">
+                    <iconify-icon class="ico ico-nav" icon="mdi:email-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+                    <span class="nav-text" data-text-en="Contact" data-text-ar="التواصل">Contact</span>
+                </a>
+            </nav>
+
+            <div class="header-actions">
+                <button type="button" class="icon-btn" id="langToggle" data-title-en="Switch to Arabic" data-title-ar="التبديل إلى الإنجليزية" data-aria-en="Switch site language to Arabic" data-aria-ar="تغيير لغة الموقع إلى الإنجليزية" title="Switch to Arabic" aria-label="Switch site language to Arabic">
+                    <iconify-icon class="ico ico-btn" icon="mdi:translate" width="22" height="22" aria-hidden="true"></iconify-icon>
+                    <span class="lang-label" id="langLabel">AR</span>
+                </button>
+                <button type="button" class="icon-btn" id="themeToggle" data-title-en="Dark mode" data-title-ar="الوضع الفاتح" data-aria-en="Toggle color theme" data-aria-ar="تبديل سمة الألوان" title="Dark mode" aria-label="Toggle color theme">
+                    <iconify-icon class="ico theme-icon-dark" icon="mdi:weather-night" width="22" height="22" aria-hidden="true"></iconify-icon>
+                    <iconify-icon class="ico theme-icon-light" icon="mdi:weather-sunny" width="22" height="22" aria-hidden="true"></iconify-icon>
+                </button>
+                <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMobile" data-open-en="Open menu" data-open-ar="فتح القائمة" data-close-en="Close menu" data-close-ar="إغلاق القائمة" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-mobile" id="navMobile" hidden>
+        <nav class="nav-mobile-inner" aria-label="Mobile">
+            <a href="#home" class="nav-link" data-section="home"><iconify-icon class="ico ico-nav" icon="mdi:home" width="22" height="22" aria-hidden="true"></iconify-icon><span class="nav-text" data-text-en="Home" data-text-ar="الرئيسية">Home</span></a>
+            <a href="#about" class="nav-link" data-section="about"><iconify-icon class="ico ico-nav" icon="mdi:account-outline" width="22" height="22" aria-hidden="true"></iconify-icon><span class="nav-text" data-text-en="About" data-text-ar="عني">About</span></a>
+            <a href="#skills" class="nav-link" data-section="skills"><iconify-icon class="ico ico-nav" icon="mdi:layers-triple" width="22" height="22" aria-hidden="true"></iconify-icon><span class="nav-text" data-text-en="Skills" data-text-ar="المهارات">Skills</span></a>
+            <a href="#services" class="nav-link" data-section="services"><iconify-icon class="ico ico-nav" icon="mdi:handshake-outline" width="22" height="22" aria-hidden="true"></iconify-icon><span class="nav-text" data-text-en="Services" data-text-ar="الخدمات">Services</span></a>
+            <a href="#experience" class="nav-link" data-section="experience"><iconify-icon class="ico ico-nav" icon="mdi:briefcase-outline" width="22" height="22" aria-hidden="true"></iconify-icon><span class="nav-text" data-text-en="Experience" data-text-ar="الخبرة">Experience</span></a>
+            <a href="#process" class="nav-link" data-section="process"><iconify-icon class="ico ico-nav" icon="mdi:chart-timeline-variant" width="22" height="22" aria-hidden="true"></iconify-icon><span class="nav-text" data-text-en="Process" data-text-ar="آلية العمل">Process</span></a>
+            <a href="#projects" class="nav-link" data-section="projects"><iconify-icon class="ico ico-nav" icon="mdi:rocket-launch-outline" width="22" height="22" aria-hidden="true"></iconify-icon><span class="nav-text" data-text-en="Projects" data-text-ar="المشاريع">Projects</span></a>
+            <a href="#testimonials" class="nav-link" data-section="testimonials"><iconify-icon class="ico ico-nav" icon="mdi:format-quote-close" width="22" height="22" aria-hidden="true"></iconify-icon><span class="nav-text" data-text-en="Testimonials" data-text-ar="آراء">Testimonials</span></a>
+            <a href="#faq" class="nav-link" data-section="faq"><iconify-icon class="ico ico-nav" icon="mdi:help-circle-outline" width="22" height="22" aria-hidden="true"></iconify-icon><span class="nav-text" data-text-en="FAQ" data-text-ar="أسئلة">FAQ</span></a>
+            <a href="#contact" class="nav-link" data-section="contact"><iconify-icon class="ico ico-nav" icon="mdi:email-outline" width="22" height="22" aria-hidden="true"></iconify-icon><span class="nav-text" data-text-en="Contact" data-text-ar="التواصل">Contact</span></a>
+        </nav>
+    </div>
+
+    <main id="main" class="main-stage">
+        <section id="home" class="section hero hero-landing">
+            <div class="hero-backdrop" aria-hidden="true"></div>
+            <div class="hero-spotlight" aria-hidden="true"></div>
+
+            <div class="hero-promo-banner" id="heroPromoBanner" data-interactive-banner data-aria-en="Interactive highlight — move the pointer to steer the light" data-aria-ar="بانر تفاعلي — حرّك المؤشر لتحريك الضوء" tabindex="0" aria-label="Interactive highlight — move the pointer to steer the light">
+                <div class="hero-promo-banner__aurora" aria-hidden="true"></div>
+                <div class="hero-promo-banner__gridfx" aria-hidden="true"></div>
+                <div class="hero-promo-banner__shine" aria-hidden="true"></div>
+                <div class="hero-promo-banner__inner">
+                    <div class="hero-promo-banner__top">
+                        <span class="hero-promo-badge">
+                            <span class="hero-promo-badge__dot" aria-hidden="true"></span>
+                            <span data-text-en="Studio-grade delivery" data-text-ar="تسليم بمعايير استوديو">Studio-grade delivery</span>
+                        </span>
+                        <div class="hero-promo-metrics" aria-hidden="true">
+                            <span class="hero-promo-metric"><strong>99%</strong> <span data-text-en="uptime mindset" data-text-ar="جاهزية">uptime mindset</span></span>
+                            <span class="hero-promo-metric"><strong>&lt;100ms</strong> <span data-text-en="interaction target" data-text-ar="تفاعل">interaction target</span></span>
+                        </div>
+                    </div>
+                    <p class="hero-promo-banner__headline">
+                        <span class="hero-promo-banner__prefix" data-text-en="I craft" data-text-ar="أصمم">I craft</span>
+                        <span class="hero-promo-banner__rotate-wrap">
+                            <span id="heroRotateText" class="hero-promo-banner__rotate" data-phrases-en="scalable products|polished UI|secure APIs|design systems" data-phrases-ar="منتجات قابلة للتوسع|واجهات أنيقة|واجهات برمجية آمنة|أنظمة تصميم" aria-live="polite">scalable products</span>
+                        </span>
+                    </p>
+                    <p class="hero-promo-banner__sub" data-text-en="Hover the banner — light follows your cursor. Built for teams who care about UX and velocity." data-text-ar="مرّر المؤشر فوق البانر — الضوء يتبع حركتك. مبني لفرق تهتم بتجربة المستخدم والسرعة.">Hover the banner — light follows your cursor. Built for teams who care about UX and velocity.</p>
+                    <div class="hero-promo-banner__cta">
+                        <a href="#contact" class="btn btn-primary btn-promo"><span data-text-en="Book a call" data-text-ar="احجز مكالمة">Book a call</span><iconify-icon class="ico ico-btn-inline" icon="mdi:calendar-clock" width="20" height="20" aria-hidden="true"></iconify-icon></a>
+                        <a href="#services" class="btn btn-ghost btn-promo"><span data-text-en="Explore services" data-text-ar="استكشف الخدمات">Explore services</span><iconify-icon class="ico ico-btn-inline" icon="mdi:arrow-right" width="20" height="20" aria-hidden="true"></iconify-icon></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-grid">
+                <div class="hero-copy reveal" data-reveal>
+                    <div class="hero-badge">
+                        <span class="hero-badge-pulse"></span>
+                        <span class="hero-badge-text" data-text-en="Available for select projects" data-text-ar="متاح لمشاريع مختارة">Available for select projects</span>
+                    </div>
+                    <p class="hero-kicker">
+                        <span class="kicker-dot"></span>
+                        <span class="greeting" data-text-en="Hello, I'm" data-text-ar="مرحباً، أنا">Hello, I'm</span>
+                    </p>
+                    <h1 class="hero-title">
+                        <span class="hero-title-glow" aria-hidden="true"></span>
+                        <span class="title-line code-ish"><span class="kw">const</span> <span class="name">developer</span> <span class="op">=</span> <span class="str">'Kan3an'</span><span class="semi">;</span></span>
+                    </h1>
+                    <p class="hero-sub" data-text-en="Full Stack Developer &amp; UI engineer — shipping fast, accessible, delightful interfaces." data-text-ar="مطور Full Stack ومهندس واجهات — أبني تجارب سريعة ومتاحة وجميلة.">
+                        Full Stack Developer & UI engineer — shipping fast, accessible, delightful interfaces.
+                    </p>
+                    <div class="hero-trust">
+                        <span class="hero-trust-item"><iconify-icon icon="mdi:check-decagram" width="18" height="18" aria-hidden="true"></iconify-icon><span data-text-en="Production-ready" data-text-ar="جاهز للإنتاج">Production-ready</span></span>
+                        <span class="hero-trust-item"><iconify-icon icon="mdi:flash" width="18" height="18" aria-hidden="true"></iconify-icon><span data-text-en="Performance-first" data-text-ar="أداء أولاً">Performance-first</span></span>
+                        <span class="hero-trust-item"><iconify-icon icon="mdi:accessibility" width="18" height="18" aria-hidden="true"></iconify-icon><span data-text-en="Accessible UX" data-text-ar="تجربة متاحة">Accessible UX</span></span>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary btn-hero-primary"><span data-text-en="Start a project" data-text-ar="ابدأ مشروعاً">Start a project</span><iconify-icon class="ico ico-btn-inline" icon="mdi:arrow-right" width="22" height="22" aria-hidden="true"></iconify-icon></a>
+                        <a href="#projects" class="btn btn-ghost btn-hero-secondary"><span data-text-en="View selected work" data-text-ar="أعمال مختارة">View selected work</span><iconify-icon class="ico ico-btn-inline" icon="mdi:folder-outline" width="22" height="22" aria-hidden="true"></iconify-icon></a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://www.linkedin.com/in/mohammad-abu-sakour-kn" class="social" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><iconify-icon class="ico ico-social" icon="mdi:linkedin" width="22" height="22" aria-hidden="true"></iconify-icon></a>
+                        <a href="#" class="social" aria-label="GitHub"><iconify-icon class="ico ico-social" icon="mdi:github" width="22" height="22" aria-hidden="true"></iconify-icon></a>
+                        <a href="#" class="social" aria-label="Twitter"><iconify-icon class="ico ico-social" icon="mdi:twitter" width="22" height="22" aria-hidden="true"></iconify-icon></a>
+                    </div>
+                </div>
+
+                <div class="hero-bento reveal" data-reveal data-tilt>
+                    <div class="bento bento-main">
+                        <div class="bento-glow"></div>
+                        <div class="avatar-ring">
+                            <div class="avatar-inner"><iconify-icon class="ico ico-avatar" icon="mdi:code-tags" width="56" height="56" aria-hidden="true"></iconify-icon></div>
+                        </div>
+                        <div class="bento-meta">
+                            <span class="meta-tag">TypeScript</span>
+                            <span class="meta-tag">React</span>
+                            <span class="meta-tag">Node</span>
+                        </div>
+                    </div>
+                    <div class="bento bento-sm bento-a">
+                        <iconify-icon class="ico ico-bento" icon="simple-icons:react" width="32" height="32" aria-hidden="true"></iconify-icon>
+                        <span data-text-en="Frontend" data-text-ar="الواجهة الأمامية">Frontend</span>
+                    </div>
+                    <div class="bento bento-sm bento-b">
+                        <iconify-icon class="ico ico-bento" icon="simple-icons:nodedotjs" width="32" height="32" aria-hidden="true"></iconify-icon>
+                        <span data-text-en="Backend" data-text-ar="الخلفية">Backend</span>
+                    </div>
+                    <div class="bento bento-sm bento-c">
+                        <iconify-icon class="ico ico-bento" icon="mdi:lightning-bolt" width="32" height="32" aria-hidden="true"></iconify-icon>
+                        <span data-text-en="Performance" data-text-ar="الأداء">Performance</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#about" class="hero-scroll-cue" data-aria-en="Scroll to next section" data-aria-ar="الانتقال للقسم التالي" aria-label="Scroll to next section">
+                <span class="hero-scroll-line"></span>
+                <span class="hero-scroll-label" data-text-en="Explore" data-text-ar="اكتشف">Explore</span>
+                <iconify-icon class="hero-scroll-icon" icon="mdi:chevron-down" width="28" height="28" aria-hidden="true"></iconify-icon>
+            </a>
+
+            <div class="marquee" aria-hidden="true">
+                <div class="marquee-track">
+                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>REST</span><span>Git</span><span>CI/CD</span>
+                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>REST</span><span>Git</span><span>CI/CD</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container">
+                <header class="section-head reveal" data-reveal>
+                    <span class="section-num">01</span>
+                    <h2 class="section-title"><span class="br">&lt;</span><span data-text-en="About" data-text-ar="عني">About</span><span class="br">/&gt;</span></h2>
+                    <p class="section-lead" data-text-en="Background, focus, and what drives the craft." data-text-ar="الخلفية، التركيز، وما يدفع الحرفة.">Background, focus, and what drives the craft.</p>
+                </header>
+                <div class="about-layout">
+                    <div class="about-card surface-panel reveal" data-reveal>
+                        <p class="about-text" data-text-en="I'm a Full Stack developer focused on clarity, performance, and design systems. I enjoy turning complex problems into simple, maintainable products." data-text-ar="أنا مطور Full Stack أركز على الوضوح والأنظمة والأداء. أحب تحويل المشكلات المعقدة إلى منتجات بسيطة وقابلة للصيانة.">
+                            I'm a Full Stack developer focused on clarity, performance, and design systems. I enjoy turning complex problems into simple, maintainable products.
+                        </p>
+                        <div class="stats">
+                            <div class="stat">
+                                <div class="stat-num" data-count="50">0</div>
+                                <div class="stat-label" data-text-en="Projects" data-text-ar="مشاريع">Projects</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-num" data-count="5">0</div>
+                                <div class="stat-label" data-text-en="Years" data-text-ar="سنوات">Years</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-num" data-count="30">0</div>
+                                <div class="stat-label" data-text-en="Clients" data-text-ar="عملاء">Clients</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-snippet reveal" data-reveal>
+                        <pre class="code-snippet" tabindex="0"><code><span class="c-k">const</span> <span class="c-v">profile</span> <span class="c-o">=</span> <span class="c-b">{</span>
+  <span class="c-p">role</span><span class="c-o">:</span> <span class="c-s">'Full Stack'</span><span class="c-o">,</span>
+  <span class="c-p">stack</span><span class="c-o">:</span> <span class="c-b">[</span><span class="c-s">'TS'</span><span class="c-o">,</span> <span class="c-s">'React'</span><span class="c-o">,</span> <span class="c-s">'Node'</span><span class="c-b">]</span><span class="c-o">,</span>
+  <span class="c-p">motto</span><span class="c-o">:</span> <span class="c-s">'Ship with care'</span>
+<span class="c-b">}</span><span class="c-o">;</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills">
+            <div class="container">
+                <header class="section-head reveal" data-reveal>
+                    <span class="section-num">02</span>
+                    <h2 class="section-title"><span class="br">&lt;</span><span data-text-en="Skills" data-text-ar="المهارات">Skills</span><span class="br">/&gt;</span></h2>
+                    <p class="section-lead" data-text-en="Tools and depth — animated on scroll." data-text-ar="الأدوات والعمق — مع حركة عند التمرير.">Tools and depth — animated on scroll.</p>
+                </header>
+                <div class="skills-bento">
+                    <div class="skill-pill reveal" data-reveal data-skill="React" data-percent="95">
+                        <div class="skill-top"><span class="skill-name">React</span><span class="skill-val">0%</span></div>
+                        <div class="skill-track"><div class="skill-fill"></div></div>
+                    </div>
+                    <div class="skill-pill reveal" data-reveal data-skill="TypeScript" data-percent="92">
+                        <div class="skill-top"><span class="skill-name">TypeScript</span><span class="skill-val">0%</span></div>
+                        <div class="skill-track"><div class="skill-fill"></div></div>
+                    </div>
+                    <div class="skill-pill reveal" data-reveal data-skill="Node.js" data-percent="90">
+                        <div class="skill-top"><span class="skill-name">Node.js</span><span class="skill-val">0%</span></div>
+                        <div class="skill-track"><div class="skill-fill"></div></div>
+                    </div>
+                    <div class="skill-pill wide reveal" data-reveal data-skill="Next.js" data-percent="88">
+                        <div class="skill-top"><span class="skill-name">Next.js</span><span class="skill-val">0%</span></div>
+                        <div class="skill-track"><div class="skill-fill"></div></div>
+                    </div>
+                    <div class="skill-pill reveal" data-reveal data-skill="PostgreSQL" data-percent="82">
+                        <div class="skill-top"><span class="skill-name">PostgreSQL</span><span class="skill-val">0%</span></div>
+                        <div class="skill-track"><div class="skill-fill"></div></div>
+                    </div>
+                    <div class="skill-pill reveal" data-reveal data-skill="Docker" data-percent="78">
+                        <div class="skill-top"><span class="skill-name">Docker</span><span class="skill-val">0%</span></div>
+                        <div class="skill-track"><div class="skill-fill"></div></div>
+                    </div>
+                    <div class="skill-pill reveal" data-reveal data-skill="Figma" data-percent="85">
+                        <div class="skill-top"><span class="skill-name">Figma</span><span class="skill-val">0%</span></div>
+                        <div class="skill-track"><div class="skill-fill"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section services">
+            <div class="container">
+                <header class="section-head reveal" data-reveal>
+                    <span class="section-num">03</span>
+                    <h2 class="section-title"><span class="br">&lt;</span><span data-text-en="Services" data-text-ar="الخدمات">Services</span><span class="br">/&gt;</span></h2>
+                    <p class="section-lead" data-text-en="Focused offerings — from greenfield builds to hardening what you already ship." data-text-ar="عروض مركزة — من المشاريع الجديدة إلى تقوية ما تُطلقه حالياً.">Focused offerings — from greenfield builds to hardening what you already ship.</p>
+                </header>
+                <div class="services-grid">
+                    <article class="service-card surface-panel reveal" data-reveal>
+                        <div class="service-card__ico"><iconify-icon icon="mdi:rocket-launch" width="32" height="32" aria-hidden="true"></iconify-icon></div>
+                        <h3 class="service-card__title" data-text-en="Product &amp; web apps" data-text-ar="منتجات وتطبيقات ويب">Product &amp; web apps</h3>
+                        <p class="service-card__desc" data-text-en="End-to-end delivery: architecture, UI, APIs, and deployment with observability baked in." data-text-ar="تسليم كامل: هندسة، واجهات، واجهات برمجية، ونشر مع مراقبة من اليوم الأول.">End-to-end delivery: architecture, UI, APIs, and deployment with observability baked in.</p>
+                        <ul class="service-card__tags">
+                            <li>React</li><li>Node</li><li>Cloud</li>
+                        </ul>
+                    </article>
+                    <article class="service-card surface-panel reveal" data-reveal>
+                        <div class="service-card__ico"><iconify-icon icon="mdi:chart-line" width="32" height="32" aria-hidden="true"></iconify-icon></div>
+                        <h3 class="service-card__title" data-text-en="Performance &amp; UX" data-text-ar="الأداء وتجربة المستخدم">Performance &amp; UX</h3>
+                        <p class="service-card__desc" data-text-en="Core Web Vitals, bundle diet, accessibility audits, and calmer interaction design." data-text-ar="مؤشرات الأداء، تخفيف الحزم، مراجعة الوصول، وتصميم تفاعلات أوضح.">Core Web Vitals, bundle diet, accessibility audits, and calmer interaction design.</p>
+                        <ul class="service-card__tags">
+                            <li>Lighthouse</li><li>a11y</li><li>Design</li>
+                        </ul>
+                    </article>
+                    <article class="service-card surface-panel reveal" data-reveal>
+                        <div class="service-card__ico"><iconify-icon icon="mdi:account-supervisor-circle" width="32" height="32" aria-hidden="true"></iconify-icon></div>
+                        <h3 class="service-card__title" data-text-en="Team enablement" data-text-ar="تمكين الفريق">Team enablement</h3>
+                        <p class="service-card__desc" data-text-en="Code review, DX tooling, CI pipelines, and mentoring so your squad ships faster with confidence." data-text-ar="مراجعة شيفرة، أدوات DX، مسارات CI، وإرشاد لتسريع التسليم بثقة.">Code review, DX tooling, CI pipelines, and mentoring so your squad ships faster with confidence.</p>
+                        <ul class="service-card__tags">
+                            <li>Git</li><li>CI/CD</li><li>Mentoring</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section experience">
+            <div class="container">
+                <header class="section-head reveal" data-reveal>
+                    <span class="section-num">04</span>
+                    <h2 class="section-title"><span class="br">&lt;</span><span data-text-en="Experience" data-text-ar="الخبرة">Experience</span><span class="br">/&gt;</span></h2>
+                    <p class="section-lead" data-text-en="Roles, impact, and technologies." data-text-ar="الأدوار، الأثر، والتقنيات.">Roles, impact, and technologies.</p>
+                </header>
+                <div class="timeline">
+                    <article class="timeline-card reveal" data-reveal>
+                        <div class="timeline-head">
+                            <span class="timeline-date">2022 — Present</span>
+                            <span class="pill pill-now" data-text-en="Current" data-text-ar="حالياً">Current</span>
+                        </div>
+                        <h3 class="timeline-title" data-text-en="Senior Full Stack Developer" data-text-ar="مطور Full Stack أول">Senior Full Stack Developer</h3>
+                        <p class="timeline-co"><iconify-icon class="ico ico-inline" icon="mdi:office-building-outline" width="18" height="18" aria-hidden="true"></iconify-icon> Tech Company Inc.</p>
+                        <p class="timeline-desc" data-text-en="Leading delivery for web platforms, mentoring engineers, and improving performance &amp; DX across the stack." data-text-ar="قيادة تسليم منصات الويب، إرشاد المهندسين، وتحسين الأداء وتجربة التطوير.">
+                            Leading delivery for web platforms, mentoring engineers, and improving performance & DX across the stack.
+                        </p>
+                        <ul class="timeline-tags">
+                            <li>React</li><li>Node</li><li>TypeScript</li><li>AWS</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-card reveal" data-reveal>
+                        <div class="timeline-head"><span class="timeline-date">2020 — 2022</span></div>
+                        <h3 class="timeline-title" data-text-en="Frontend Developer" data-text-ar="مطور واجهة أمامية">Frontend Developer</h3>
+                        <p class="timeline-co"><iconify-icon class="ico ico-inline" icon="mdi:office-building-outline" width="18" height="18" aria-hidden="true"></iconify-icon> Digital Solutions</p>
+                        <p class="timeline-desc" data-text-en="Built responsive apps with React/Vue, improved Core Web Vitals, and collaborated tightly with design." data-text-ar="بناء تطبيقات متجاوبة بـ React/Vue، تحسين مؤشرات الأداء، وتعاون وثيق مع التصميم.">
+                            Built responsive apps with React/Vue, improved Core Web Vitals, and collaborated tightly with design.
+                        </p>
+                        <ul class="timeline-tags">
+                            <li>React</li><li>Vue</li><li>SASS</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="section process">
+            <div class="container">
+                <header class="section-head reveal" data-reveal>
+                    <span class="section-num">05</span>
+                    <h2 class="section-title"><span class="br">&lt;</span><span data-text-en="Process" data-text-ar="آلية العمل">Process</span><span class="br">/&gt;</span></h2>
+                    <p class="section-lead" data-text-en="From idea to launch — clear steps, predictable delivery." data-text-ar="من الفكرة إلى الإطلاق — خطوات واضحة وتسليم متوقع.">From idea to launch — clear steps, predictable delivery.</p>
+                </header>
+                <ol class="process-grid">
+                    <li class="process-step surface-panel reveal" data-reveal>
+                        <span class="process-idx" aria-hidden="true">01</span>
+                        <iconify-icon class="process-ico" icon="mdi:lightbulb-on-outline" width="28" height="28" aria-hidden="true"></iconify-icon>
+                        <h3 class="process-title" data-text-en="Discover &amp; scope" data-text-ar="استكشاف وتحديد النطاق">Discover &amp; scope</h3>
+                        <p class="process-desc" data-text-en="Goals, constraints, and success metrics — aligned before a single line of code." data-text-ar="الأهداف والقيود ومعايير النجاح — متوافقة قبل سطر برمجي واحد.">Goals, constraints, and success metrics — aligned before a single line of code.</p>
+                    </li>
+                    <li class="process-step surface-panel reveal" data-reveal>
+                        <span class="process-idx" aria-hidden="true">02</span>
+                        <iconify-icon class="process-ico" icon="mdi:draw-pen" width="28" height="28" aria-hidden="true"></iconify-icon>
+                        <h3 class="process-title" data-text-en="Design &amp; prototype" data-text-ar="تصميم ونموذج">Design &amp; prototype</h3>
+                        <p class="process-desc" data-text-en="Flows, UI states, and accessible patterns — fast feedback loops with you." data-text-ar="المسارات وحالات الواجهة وأنماط الوصول — حلقات ملاحظات سريعة معك.">Flows, UI states, and accessible patterns — fast feedback loops with you.</p>
+                    </li>
+                    <li class="process-step surface-panel reveal" data-reveal>
+                        <span class="process-idx" aria-hidden="true">03</span>
+                        <iconify-icon class="process-ico" icon="mdi:code-braces" width="28" height="28" aria-hidden="true"></iconify-icon>
+                        <h3 class="process-title" data-text-en="Build &amp; integrate" data-text-ar="بناء ودمج">Build &amp; integrate</h3>
+                        <p class="process-desc" data-text-en="Typed APIs, tests where it matters, and CI-friendly structure." data-text-ar="واجهات مُنمّاة، اختبارات حيث الأهم، وهيكل مناسب للـ CI.">Typed APIs, tests where it matters, and CI-friendly structure.</p>
+                    </li>
+                    <li class="process-step surface-panel reveal" data-reveal>
+                        <span class="process-idx" aria-hidden="true">04</span>
+                        <iconify-icon class="process-ico" icon="mdi:rocket-launch-outline" width="28" height="28" aria-hidden="true"></iconify-icon>
+                        <h3 class="process-title" data-text-en="Ship &amp; iterate" data-text-ar="إطلاق وتحسين">Ship &amp; iterate</h3>
+                        <p class="process-desc" data-text-en="Monitoring, performance budgets, and small iterations based on real usage." data-text-ar="مراقبة وميزانيات أداء وتحسينات صغيرة وفق الاستخدام الفعلي.">Monitoring, performance budgets, and small iterations based on real usage.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <div class="container">
+                <header class="section-head reveal" data-reveal>
+                    <span class="section-num">06</span>
+                    <h2 class="section-title"><span class="br">&lt;</span><span data-text-en="Projects" data-text-ar="المشاريع">Projects</span><span class="br">/&gt;</span></h2>
+                    <p class="section-lead" data-text-en="Selected work — links are placeholders you can replace." data-text-ar="أعمال مختارة — الروابط للتعديل لاحقاً.">Selected work — links are placeholders you can replace.</p>
+                </header>
+                <div class="project-grid">
+                    <article class="project reveal" data-reveal>
+                        <div class="project-visual"><iconify-icon class="ico ico-project" icon="mdi:cart-outline" width="48" height="48" aria-hidden="true"></iconify-icon></div>
+                        <div class="project-body">
+                            <h3 data-text-en="E‑Commerce Platform" data-text-ar="منصة تجارة إلكترونية">E‑Commerce Platform</h3>
+                            <p data-text-en="Payments, inventory, and admin dashboards with a polished storefront." data-text-ar="مدفوعات ومخزون ولوحات تحكم مع واجهة متجر أنيقة.">Payments, inventory, and admin dashboards with a polished storefront.</p>
+                            <div class="project-links">
+                                <a href="#" class="link-mini" aria-label="Open project"><iconify-icon class="ico" icon="mdi:open-in-new" width="20" height="20" aria-hidden="true"></iconify-icon></a>
+                                <a href="#" class="link-mini" aria-label="Repository"><iconify-icon class="ico" icon="mdi:github" width="20" height="20" aria-hidden="true"></iconify-icon></a>
+                            </div>
+                            <div class="project-tags"><span>React</span><span>Node</span><span>MongoDB</span></div>
+                        </div>
+                    </article>
+                    <article class="project reveal" data-reveal>
+                        <div class="project-visual"><iconify-icon class="ico ico-project" icon="mdi:clipboard-check-outline" width="48" height="48" aria-hidden="true"></iconify-icon></div>
+                        <div class="project-body">
+                            <h3 data-text-en="Task Management" data-text-ar="إدارة المهام">Task Management</h3>
+                            <p data-text-en="Realtime boards, notifications, and a calm, focused UI." data-text-ar="لوحات فورية وإشعارات وواجهة هادئة ومركزة.">Realtime boards, notifications, and a calm, focused UI.</p>
+                            <div class="project-links">
+                                <a href="#" class="link-mini" aria-label="Open project"><iconify-icon class="ico" icon="mdi:open-in-new" width="20" height="20" aria-hidden="true"></iconify-icon></a>
+                                <a href="#" class="link-mini" aria-label="Repository"><iconify-icon class="ico" icon="mdi:github" width="20" height="20" aria-hidden="true"></iconify-icon></a>
+                            </div>
+                            <div class="project-tags"><span>React</span><span>Firebase</span><span>TS</span></div>
+                        </div>
+                    </article>
+                    <article class="project reveal" data-reveal>
+                        <div class="project-visual"><iconify-icon class="ico ico-project" icon="mdi:newspaper-variant-outline" width="48" height="48" aria-hidden="true"></iconify-icon></div>
+                        <div class="project-body">
+                            <h3 data-text-en="Blog &amp; CMS" data-text-ar="مدونة و CMS">Blog & CMS</h3>
+                            <p data-text-en="Editorial workflow, SEO basics, and fast static pages." data-text-ar="سير عمل تحريري وأساسيات SEO وصفحات سريعة.">Editorial workflow, SEO basics, and fast static pages.</p>
+                            <div class="project-links">
+                                <a href="#" class="link-mini" aria-label="Open project"><iconify-icon class="ico" icon="mdi:open-in-new" width="20" height="20" aria-hidden="true"></iconify-icon></a>
+                                <a href="#" class="link-mini" aria-label="Repository"><iconify-icon class="ico" icon="mdi:github" width="20" height="20" aria-hidden="true"></iconify-icon></a>
+                            </div>
+                            <div class="project-tags"><span>Next.js</span><span>Prisma</span><span>PostgreSQL</span></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section testimonials">
+            <div class="container">
+                <header class="section-head reveal" data-reveal>
+                    <span class="section-num">07</span>
+                    <h2 class="section-title"><span class="br">&lt;</span><span data-text-en="Testimonials" data-text-ar="الشهادات">Testimonials</span><span class="br">/&gt;</span></h2>
+                    <p class="section-lead" data-text-en="What collaborators say — placeholders you can replace with real quotes." data-text-ar="ما يقوله المتعاونون — نصوص للاستبدال بشهادات حقيقية.">What collaborators say — placeholders you can replace with real quotes.</p>
+                </header>
+                <div class="testimonials-grid">
+                    <blockquote class="testimonial surface-panel reveal" data-reveal cite="#">
+                        <iconify-icon class="testimonial__quote" icon="mdi:format-quote-open" width="28" height="28" aria-hidden="true"></iconify-icon>
+                        <p class="testimonial__text" data-text-en="Kan3an turned a vague brief into a shippable MVP in weeks. Communication was crisp and the UI felt premium." data-text-ar="حوّل Kan3an موجزاً غامضاً إلى نموذج أولي جاهز للإطلاق في أسابيع. التواصل واضح والواجهة احترافية.">Kan3an turned a vague brief into a shippable MVP in weeks. Communication was crisp and the UI felt premium.</p>
+                        <footer class="testimonial__foot">
+                            <div class="testimonial__avatar" aria-hidden="true">A</div>
+                            <div>
+                                <div class="testimonial__name" data-text-en="Alex M." data-text-ar="أليكس م.">Alex M.</div>
+                                <div class="testimonial__role" data-text-en="Product Lead, SaaS" data-text-ar="قائد منتج، SaaS">Product Lead, SaaS</div>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial surface-panel reveal" data-reveal cite="#">
+                        <iconify-icon class="testimonial__quote" icon="mdi:format-quote-open" width="28" height="28" aria-hidden="true"></iconify-icon>
+                        <p class="testimonial__text" data-text-en="Our dashboard got faster and more accessible after the performance pass — measurable wins in Core Web Vitals." data-text-ar="أصبحت لوحة التحكم أسرع وأكثر سهولة بعد مراجعة الأداء — نتائج واضحة في مؤشرات الويب.">Our dashboard got faster and more accessible after the performance pass — measurable wins in Core Web Vitals.</p>
+                        <footer class="testimonial__foot">
+                            <div class="testimonial__avatar" aria-hidden="true">S</div>
+                            <div>
+                                <div class="testimonial__name" data-text-en="Sara K." data-text-ar="سارة ك.">Sara K.</div>
+                                <div class="testimonial__role" data-text-en="Engineering Manager" data-text-ar="مديرة هندسة">Engineering Manager</div>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial surface-panel testimonial--accent reveal" data-reveal cite="#">
+                        <iconify-icon class="testimonial__quote" icon="mdi:format-quote-open" width="28" height="28" aria-hidden="true"></iconify-icon>
+                        <p class="testimonial__text" data-text-en="Reliable partner for full-stack work — from schema design to pixel-perfect components." data-text-ar="شريك موثوق للعمل الشامل — من تصميم المخطط إلى المكوّنات بدقة بكسل.">Reliable partner for full-stack work — from schema design to pixel-perfect components.</p>
+                        <footer class="testimonial__foot">
+                            <div class="testimonial__avatar" aria-hidden="true">O</div>
+                            <div>
+                                <div class="testimonial__name" data-text-en="Omar R." data-text-ar="عمر ر.">Omar R.</div>
+                                <div class="testimonial__role" data-text-en="CTO, Startup" data-text-ar="مدير تقني، ناشئة">CTO, Startup</div>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section faq">
+            <div class="container">
+                <header class="section-head reveal" data-reveal>
+                    <span class="section-num">08</span>
+                    <h2 class="section-title"><span class="br">&lt;</span><span data-text-en="FAQ" data-text-ar="الأسئلة الشائعة">FAQ</span><span class="br">/&gt;</span></h2>
+                    <p class="section-lead" data-text-en="Quick answers — tap a question to expand." data-text-ar="إجابات سريعة — اضغط على السؤال للتوسيع.">Quick answers — tap a question to expand.</p>
+                </header>
+                <div class="faq-list">
+                    <details class="faq-item surface-panel reveal" data-reveal>
+                        <summary class="faq-summary">
+                            <span data-text-en="What kinds of projects do you take on?" data-text-ar="ما أنواع المشاريع التي تقبلها؟">What kinds of projects do you take on?</span>
+                            <iconify-icon class="faq-chevron" icon="mdi:chevron-down" width="22" height="22" aria-hidden="true"></iconify-icon>
+                        </summary>
+                        <div class="faq-body">
+                            <p data-text-en="Web apps, dashboards, and product UI — especially when performance, accessibility, or design systems matter." data-text-ar="تطبيقات ويب ولوحات وواجهات منتج — خاصة عندما يهم الأداء أو الوصول أو أنظمة التصميم.">Web apps, dashboards, and product UI — especially when performance, accessibility, or design systems matter.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item surface-panel reveal" data-reveal>
+                        <summary class="faq-summary">
+                            <span data-text-en="How do we start working together?" data-text-ar="كيف نبدأ العمل معاً؟">How do we start working together?</span>
+                            <iconify-icon class="faq-chevron" icon="mdi:chevron-down" width="22" height="22" aria-hidden="true"></iconify-icon>
+                        </summary>
+                        <div class="faq-body">
+                            <p data-text-en="Send a short brief via the contact form: goals, timeline, and stack. I’ll reply with next steps and availability." data-text-ar="أرسل ملخصاً قصيراً عبر نموذج التواصل: الأهداف والجدول الزمني والتقنيات. سأرد بالخطوات التالية والتوفر.">Send a short brief via the contact form: goals, timeline, and stack. I’ll reply with next steps and availability.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item surface-panel reveal" data-reveal>
+                        <summary class="faq-summary">
+                            <span data-text-en="Do you work with existing teams and codebases?" data-text-ar="هل تعمل مع فرق وقواعد شيفرة قائمة؟">Do you work with existing teams and codebases?</span>
+                            <iconify-icon class="faq-chevron" icon="mdi:chevron-down" width="22" height="22" aria-hidden="true"></iconify-icon>
+                        </summary>
+                        <div class="faq-body">
+                            <p data-text-en="Yes — onboarding, refactors, and incremental delivery are common. Clear docs and CI make collaboration smoother." data-text-ar="نعم — الإدماج وإعادة الهيكلة والتسليم التدريجي شائعة. الوثائق الواضحة وـ CI يجعلان التعاون أسهل.">Yes — onboarding, refactors, and incremental delivery are common. Clear docs and CI make collaboration smoother.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <header class="section-head reveal" data-reveal>
+                    <span class="section-num">09</span>
+                    <h2 class="section-title"><span class="br">&lt;</span><span data-text-en="Contact" data-text-ar="التواصل">Contact</span><span class="br">/&gt;</span></h2>
+                    <p class="section-lead" data-text-en="Let's build something great." data-text-ar="لنبني شيئاً رائعاً.">Let's build something great.</p>
+                </header>
+                <div class="contact-grid">
+                    <div class="contact-card reveal" data-reveal>
+                        <div class="contact-row">
+                            <div class="contact-ico"><iconify-icon class="ico" icon="mdi:email-outline" width="24" height="24" aria-hidden="true"></iconify-icon></div>
+                            <div class="contact-row-body">
+                                <div class="contact-label" data-text-en="Email" data-text-ar="البريد">Email</div>
+                                <div class="contact-value-row">
+                                    <a href="mailto:developer@example.com" id="contactEmailLink">developer@example.com</a>
+                                    <button type="button" class="btn-copy" id="copyEmailBtn" data-title-en="Copy email address" data-title-ar="نسخ عنوان البريد" data-ok-en="Copied!" data-ok-ar="تم النسخ!" title="Copy email address" aria-label="Copy email address">
+                                        <iconify-icon icon="mdi:content-copy" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                    </button>
+                                </div>
+                                <p class="copy-hint" id="copyEmailHint" role="status" aria-live="polite" hidden></p>
+                            </div>
+                        </div>
+                        <div class="contact-row">
+                            <div class="contact-ico"><iconify-icon class="ico" icon="mdi:phone-outline" width="24" height="24" aria-hidden="true"></iconify-icon></div>
+                            <div>
+                                <div class="contact-label" data-text-en="Phone" data-text-ar="الهاتف">Phone</div>
+                                <a href="tel:+966501234567">+966 50 123 4567</a>
+                            </div>
+                        </div>
+                        <div class="contact-row">
+                            <div class="contact-ico"><iconify-icon class="ico" icon="mdi:map-marker-outline" width="24" height="24" aria-hidden="true"></iconify-icon></div>
+                            <div>
+                                <div class="contact-label" data-text-en="Location" data-text-ar="الموقع">Location</div>
+                                <span data-text-en="Riyadh, Saudi Arabia" data-text-ar="الرياض، المملكة العربية السعودية">Riyadh, Saudi Arabia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form reveal" id="contactForm" data-reveal novalidate>
+                        <label class="field">
+                            <span data-text-en="Name" data-text-ar="الاسم">Name</span>
+                            <input type="text" name="name" class="input" data-placeholder-en="Your name" data-placeholder-ar="اسمك" placeholder="Your name" required autocomplete="name">
+                        </label>
+                        <label class="field">
+                            <span data-text-en="Email" data-text-ar="البريد">Email</span>
+                            <input type="email" name="email" class="input" data-placeholder-en="you@domain.com" data-placeholder-ar="you@domain.com" placeholder="you@domain.com" required autocomplete="email">
+                        </label>
+                        <label class="field">
+                            <span data-text-en="Subject" data-text-ar="الموضوع">Subject</span>
+                            <input type="text" name="subject" class="input" data-placeholder-en="Project inquiry" data-placeholder-ar="استفسار عن مشروع" placeholder="Project inquiry" required>
+                        </label>
+                        <label class="field">
+                            <span data-text-en="Message" data-text-ar="الرسالة">Message</span>
+                            <textarea name="message" class="input input-area" rows="4" data-placeholder-en="Tell me about your goals…" data-placeholder-ar="صف أهدافك…" placeholder="Tell me about your goals…" required></textarea>
+                        </label>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span data-text-en="Send message" data-text-ar="إرسال الرسالة">Send message</span>
+                            <iconify-icon class="ico ico-btn-inline" icon="mdi:send" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        </button>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <aside class="footer-promo" data-aria-en="Offer: custom web services" data-aria-ar="عرض: خدمات ويب مخصصة" aria-label="Offer: custom web services">
+        <div class="footer-promo__glow" aria-hidden="true"></div>
+        <div class="container footer-promo__inner">
+            <div class="footer-promo__text">
+                <h2 class="footer-promo__title" data-text-en="Need custom layouts or web pages?" data-text-ar="تحتاج تنسيقات أو صفحات مخصصة؟">Need custom layouts or web pages?</h2>
+                <p class="footer-promo__lead" data-text-en="Reach out for tailored UI, landing pages, or full portfolio builds — let’s discuss your project on LinkedIn." data-text-ar="تواصل لتنسيق واجهات، صفحات هبوط، أو بناء ملفات تعريف كاملة — لنناقش مشروعك عبر لينكدإن.">Reach out for tailored UI, landing pages, or full portfolio builds — let’s discuss your project on LinkedIn.</p>
+            </div>
+            <a href="https://www.linkedin.com/in/mohammad-abu-sakour-kn" class="btn btn-primary footer-promo__btn" target="_blank" rel="noopener noreferrer">
+                <span data-text-en="Message on LinkedIn" data-text-ar="راسلني على لينكدإن">Message on LinkedIn</span>
+                <iconify-icon class="ico ico-btn-inline" icon="mdi:linkedin" width="22" height="22" aria-hidden="true"></iconify-icon>
+            </a>
+        </div>
+    </aside>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-main">
+                <p class="footer-identity">
+                    <span class="footer-identity__cr">© <span id="year"></span> Mohammad Abu Sakour</span>
+                    <span class="footer-identity__aka">(Kan3an)</span>
+                </p>
+                <p class="footer-legal" data-text-en="All rights reserved." data-text-ar="جميع الحقوق محفوظة.">All rights reserved.</p>
+                <p class="footer-tagline" data-text-en="Built with care." data-text-ar="بُني بعناية.">Built with care.</p>
+            </div>
+            <a href="https://www.linkedin.com/in/mohammad-abu-sakour-kn" class="footer-social" target="_blank" rel="noopener noreferrer" data-aria-en="Mohammad Abu Sakour on LinkedIn" data-aria-ar="محمد أبو سكور على لينكدإن" aria-label="Mohammad Abu Sakour on LinkedIn">
+                <iconify-icon icon="mdi:linkedin" width="22" height="22" aria-hidden="true"></iconify-icon>
+                <span data-text-en="LinkedIn" data-text-ar="لينكدإن">LinkedIn</span>
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" crossorigin="anonymous"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
