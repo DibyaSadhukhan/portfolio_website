@@ -16,7 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
+
       {/* 
         We force a dark background (#080806) to match the Hero exactly.
         We also removed the old light-mode Navbar for now so it doesn't look weird! 

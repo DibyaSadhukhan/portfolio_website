@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { portfolioData } from '@/data/content';
+import { portfolioData, core_skills } from '@/data/content';
 import { useState, useEffect } from 'react';
 
 export default function Hero() {
@@ -94,9 +94,9 @@ export default function Hero() {
                         <div className="col-span-2 bg-gray-900/40 backdrop-blur border border-gray-800 rounded-3xl p-8 flex flex-col items-center justify-center min-h-[160px] hover:border-gray-600 transition duration-500">
                             <div className="text-6xl mb-6 font-mono text-purple-400 font-bold">{'</>'}</div>
                             <div className="flex flex-wrap justify-center gap-3">
-                                <span className="bg-black/50 border border-gray-800 text-sm px-4 py-2 rounded-md hover:bg-gray-800 transition">Python</span>
-                                <span className="bg-black/50 border border-gray-800 text-sm px-4 py-2 rounded-md hover:bg-gray-800 transition">Javascript</span>
-                                <span className="bg-black/50 border border-gray-800 text-sm px-4 py-2 rounded-md hover:bg-gray-800 transition">PHP</span>
+                                <span className="bg-black/50 border border-gray-800 text-sm px-4 py-2 rounded-md hover:bg-gray-800 transition">{core_skills[0].items[0].name}</span>
+                                <span className="bg-black/50 border border-gray-800 text-sm px-4 py-2 rounded-md hover:bg-gray-800 transition">{core_skills[0].items[1].name}</span>
+                                <span className="bg-black/50 border border-gray-800 text-sm px-4 py-2 rounded-md hover:bg-gray-800 transition">{core_skills[0].items[2].name}</span>
                             </div>
                         </div>
 
@@ -109,8 +109,8 @@ export default function Hero() {
                                     </svg>
                                 </div>
                                 <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 items-center">
-                                    <span className="text-sm text-gray-300">PostgreSQL</span>
-                                    <span className="text-sm text-gray-300">MySQL</span>
+                                    <span className="text-sm text-gray-300">{core_skills[1].items[0].name}</span>
+                                    <span className="text-sm text-gray-300">{core_skills[1].items[0].name}</span>
                                 </div>
                             </div>
 
