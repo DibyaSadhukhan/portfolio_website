@@ -33,8 +33,8 @@ export const core_skills = [
         category: "Languages",
         icon: icons.laptop,
         items: [
-            { name: "Python", value: 90 },
-            { name: "Javascript", value: 75 },
+            { name: "Python", value: 93 },
+            { name: "Javascript", value: 77 },
             { name: "PHP", value: 90 }
         ]
     },
@@ -52,9 +52,9 @@ export const core_skills = [
         category: "Hosting & Cloud",
         icon: "/cloud.svg",
         items: [
-            { name: "Docker", value: 90 },
-            { name: "AWS", value: 80 },
-            { name: "GCP", value: 80 }
+            { name: "Docker", value: 88 },
+            { name: "AWS", value: 83 },
+            { name: "GCP", value: 77 }
         ]
     },
     {
@@ -62,7 +62,7 @@ export const core_skills = [
         category: "Visualization",
         icon: "/vis.svg",
         items: [
-            { name: "Looker Studios", value: 95 },
+            { name: "Data Studios", value: 95 },
             { name: "Tableau", value: 72 }
         ]
     }
@@ -185,8 +185,8 @@ export const projects_data = [
             "🔹 Performance & Optimization\n- Chunk-level processing enables parallelization\n- Caching of embeddings and repeated evaluations\n- Prompt optimization to minimize token usage while preserving output quality\n- Controlled concurrency to manage API rate limits",
             "🔹 Reliability & Guardrails\n- Output validation layer ensures structured responses\n- Fallback logic for failed or low-confidence evaluations\n- Logging and monitoring for pipeline visibility",
         ],
-        github: "NDA",
-        live: "NDA"
+        github: "no_code",
+        live: "https://mindbodybliss.in/?utm_source=dibya_s_portfolio&utm_param=portfolio_project"
     },
     {
         "id": 2,
@@ -240,7 +240,7 @@ export const projects_data = [
             "🔹 Performance & Scalability\n- Optimized data pipelines for accuracy and speed\n- Ensured system reliability under increasing user load\n- Automated repetitive workflows to improve operational throughput",
 
         ],
-        "github": "NDA",
+        "github": "no_code",
         "live": "https://heartitout.in/?utm_source=dibya_s_portfolio&utm_param=portfolio_project"
     },
     {
@@ -265,7 +265,31 @@ export const projects_data = [
             "🔹 System Design & Scalability\nArchitected systems with scalability in mind, ensuring the platform could handle increasing user activity and operational complexity."
 
         ],
-        "github": "NDA",
+        "github": "no_code",
         "live": "https://happyminds.in/?utm_source=dibya_s_portfolio&utm_param=portfolio_project"
+    },
+    {
+        "id": 5,
+        "title": "n8n Automated Backup & Restore System",
+        "category": "Automation / DevOps / Reliability",
+        "description": "Built an automated backup and versioning system for n8n workflows to prevent data loss, ensuring reliable recovery from database failures.",
+        "tools": ["n8n", "Node.js", "AWS S3", "Google Drive API", "APIs", "Automation", "System Design"],
+        "long_description": [
+            "Designed and implemented an automated backup and recovery system to address recurring issues of n8n workflow data loss due to database inconsistencies.",
+
+            "🔹 Backup Pipeline\nBuilt automation workflows that periodically extract n8n workflow JSON configurations and store them as versioned backups.",
+
+            "🔹 Multi-Storage Redundancy\nIntegrated Google Drive and AWS S3 to store backups across multiple storage providers, ensuring high availability and redundancy in case of failure.",
+
+            "🔹 Version Control System\nImplemented a lightweight versioning mechanism that maintains up to 5 recent versions of each workflow, enabling rollback to previous stable states when required.",
+
+            "🔹 Restore Mechanism\nDeveloped a recovery pipeline that allows quick restoration of workflows from stored backups, minimizing downtime and operational disruption.",
+
+            "🔹 Orchestration & Automation\nUsed n8n to orchestrate backup triggers, storage uploads, version cleanup, and restoration workflows in a fully automated manner.",
+
+            "🔹 Reliability & Fault Tolerance\n- Reduced risk of workflow loss due to DB issues\n- Enabled rapid recovery with minimal manual intervention\n- Ensured consistent backup integrity across storage systems",
+        ],
+        "github": "NDA",
+        "live": "NDA"
     }
 ];

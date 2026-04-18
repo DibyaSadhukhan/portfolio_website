@@ -1,8 +1,33 @@
+"use client";
+
 import { core_skills, capsule_skills, icons } from '@/data/content';
+import Link from 'next/link';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Skills() {
+    const [isLoaded, setIsLoaded] = useState(false);
+    const sectionRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    setIsLoaded(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.2 } // Trigger when 20% of section is visible
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section id="skills" className="bg-[#080806] py-24 px-6 text-gray-300 relative border-t border-gray-900/50">
+        <section ref={sectionRef} id="skills" className="bg-[#080806] py-24 px-6 text-gray-300 relative border-t border-gray-900/50">
             <div className="max-w-6xl mx-auto z-10 relative">
 
                 {/* Header built like a variable assignment! */}
@@ -51,8 +76,8 @@ export default function Skills() {
                                                     {"-".repeat(150)}
                                                 </div>
                                                 {/* Foreground filled dashes with neon shadow */}
-                                                <div className="absolute left-0 inset-y-0 flex items-center text-purple-500 whitespace-nowrap overflow-hidden drop-shadow-[0_0_6px_rgba(168,85,247,0.8)] font-bold z-10" 
-                                                     style={{ width: `${item.value}%` }}>
+                                                <div className="absolute left-0 inset-y-0 flex items-center text-purple-500 whitespace-nowrap overflow-hidden drop-shadow-[0_0_6px_rgba(168,85,247,0.8)] font-bold z-10 transition-all duration-[1500ms] ease-out" 
+                                                     style={{ width: `${isLoaded ? item.value : 50}%` }}>
                                                     {"-".repeat(150)}
                                                 </div>
                                             </div>
@@ -101,6 +126,13 @@ export default function Skills() {
                 {/* Closes the object array bracket! */}
                 <div className="mt-16 text-center text-4xl md:text-5xl font-bold text-white font-mono tracking-tight">
                     {'}'}
+                </div>
+
+                {/* Career Button */}
+                <div className="mt-16 flex justify-center">
+                    <Link href="/experience" className="px-8 py-3.5 bg-blue-900/30 text-blue-400 border border-blue-900/50 shadow-[0_0_15px_rgba(96,165,250,0.15)] hover:shadow-[0_0_20px_rgba(96,165,250,0.3)] rounded-xl font-mono transition hover:bg-blue-900/50 font-bold hover:-translate-y-1">
+                        show_career()
+                    </Link>
                 </div>
 
             </div>

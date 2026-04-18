@@ -4,19 +4,32 @@ import Link from 'next/link';
 import { portfolioData, core_skills } from '@/data/content';
 import { useState, useEffect } from 'react';
 
-export default function Hero() {
-    // This state controls the terminal typing animation
-    const [linesVisible, setLinesVisible] = useState(0);
+// Hand-rolled sequential Typewriter component
+function TypewriterLine({ text, delay, onComplete }: { text: string, delay: number, onComplete?: () => void }) {
+    const [typed, setTyped] = useState("");
 
     useEffect(() => {
-        // Simulates the time.sleep(0.4) terminal loop
-        const timer1 = setTimeout(() => setLinesVisible(1), 800);
-        const timer2 = setTimeout(() => setLinesVisible(2), 1600);
-        const timer3 = setTimeout(() => setLinesVisible(3), 2400); // 0.8s gap = 0.4s compile + 0.4s sleep!
-        const timer4 = setTimeout(() => setLinesVisible(4), 3200);
+        let i = 0;
+        let timer: NodeJS.Timeout;
+        const outer = setTimeout(() => {
+            timer = setInterval(() => {
+                setTyped(text.slice(0, i + 1));
+                i++;
+                if (i >= text.length) {
+                    clearInterval(timer);
+                    if (onComplete) onComplete();
+                }
+            }, 35);
+        }, delay);
+        return () => { clearTimeout(outer); clearInterval(timer); }
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-        return () => { clearTimeout(timer1); clearTimeout(timer2); clearTimeout(timer3); clearTimeout(timer4); };
-    }, []);
+    return <>{typed}</>;
+}
+
+export default function Hero() {
+    // This state controls the sequential terminal typing animation
+    const [linesVisible, setLinesVisible] = useState(0);
 
     return (
         // We force a dark theme (#080806) like the template
@@ -51,37 +64,42 @@ export default function Hero() {
                         </div>
 
                         {/* The Animated Console Output */}
-                        <div className="mt-6 pt-4 border-t border-gray-800 text-gray-400 flex flex-col gap-2 font-mono">
+                        <div className="mt-6 pt-4 border-t border-gray-800 text-gray-400 flex flex-col gap-2 font-mono min-h-[140px]">
+                            <div className="flex items-start gap-2">
+                                <span className="text-green-500 font-bold pt-0.5">❯</span>
+                                <span className="text-white font-semibold">
+                                    <TypewriterLine text={`Hello, I'm ${portfolioData.name}`} delay={800} onComplete={() => setLinesVisible(1)} />
+                                    {linesVisible === 0 && <span className="inline-block w-2.5 h-4 align-middle ml-1.5 bg-gray-500 opacity-50 animate-pulse"></span>}
+                                </span>
+                            </div>
+
                             {linesVisible >= 1 && (
-                                <div className="flex items-center gap-2">
-                                    <span className="text-green-500 font-bold">❯</span>
-                                    <span className="text-white font-semibold">Hello, I'm {portfolioData.name}</span>
-                                </div>
-                            )}
-                            {linesVisible >= 2 && (
-                                <div className="flex items-center gap-2">
-                                    <span className="text-green-500 font-bold">❯</span>
-                                    <span className="text-white font-semibold">{portfolioData.role}</span>
-                                </div>
-                            )}
-                            {linesVisible >= 3 && (
-                                <div className="flex items-center gap-2">
-                                    <span className="text-green-500 font-bold">❯</span>
-                                    <span className="text-white font-semibold">{portfolioData.speciality}</span>
-                                </div>
-                            )}
-                            {linesVisible >= 4 && (
-                                <div className="flex items-center gap-2 mt-1">
-                                    <span className="text-blue-400 font-bold">→</span>
-                                    <span className="text-blue-300 font-semibold">{portfolioData.tagline}</span>
+                                <div className="flex items-start gap-2">
+                                    <span className="text-green-500 font-bold pt-0.5">❯</span>
+                                    <span className="text-white font-semibold">
+                                        <TypewriterLine text={portfolioData.role} delay={200} onComplete={() => setLinesVisible(2)} />
+                                        {linesVisible === 1 && <span className="inline-block w-2.5 h-4 align-middle ml-1.5 bg-gray-500 opacity-50 animate-pulse"></span>}
+                                    </span>
                                 </div>
                             )}
 
-                            {/* Blinking Cursor waiting for execution to finish */}
-                            {linesVisible < 4 && (
-                                <div className="flex items-center gap-2">
-                                    <span className="text-green-500 font-bold">❯</span>
-                                    <span className="w-2.5 h-4 bg-gray-400 animate-pulse"></span>
+                            {linesVisible >= 2 && (
+                                <div className="flex items-start gap-2">
+                                    <span className="text-green-500 font-bold pt-0.5">❯</span>
+                                    <span className="text-white font-semibold">
+                                        <TypewriterLine text={portfolioData.speciality} delay={200} onComplete={() => setLinesVisible(3)} />
+                                        {linesVisible === 2 && <span className="inline-block w-2.5 h-4 align-middle ml-1.5 bg-gray-500 opacity-50 animate-pulse"></span>}
+                                    </span>
+                                </div>
+                            )}
+
+                            {linesVisible >= 3 && (
+                                <div className="flex items-start gap-2 mt-1">
+                                    <span className="text-blue-400 font-bold pt-0.5">→</span>
+                                    <span className="text-blue-300 font-semibold">
+                                        <TypewriterLine text={portfolioData.tagline} delay={400} onComplete={() => setLinesVisible(4)} />
+                                        <span className={`inline-block w-2.5 h-4 align-middle ml-1.5 animate-[pulse_1s_step-end_infinite] ${linesVisible >= 4 ? 'bg-purple-400 shadow-[0_0_8px_#a855f7]' : 'bg-gray-500 opacity-50'}`}></span>
+                                    </span>
                                 </div>
                             )}
                         </div>
@@ -154,10 +172,10 @@ export default function Hero() {
 
                             {/* The Buttons Row */}
                             <div className="flex flex-wrap justify-center gap-3">
-                                <Link href="#projects" className="flex-1 min-w-[120px] bg-white text-black px-6 py-3.5 rounded-xl hover:bg-gray-200 transition font-bold text-sm text-center">
+                                <Link href="/projects" className="flex-1 min-w-[120px] bg-white text-black px-6 py-3.5 rounded-xl hover:bg-gray-200 transition font-bold text-sm text-center">
                                     Projects
                                 </Link>
-                                <Link href="#contact" className="flex-1 min-w-[120px] bg-[#1a1d27] border border-gray-700 text-white px-6 py-3.5 rounded-xl hover:bg-gray-800 transition font-bold text-sm text-center">
+                                <Link href="/#contact" className="flex-1 min-w-[120px] bg-[#1a1d27] border border-gray-700 text-white px-6 py-3.5 rounded-xl hover:bg-gray-800 transition font-bold text-sm text-center">
                                     Contact Me
                                 </Link>
                             </div>

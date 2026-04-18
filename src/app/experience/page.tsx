@@ -115,7 +115,7 @@ export default function ExperiencePage() {
 
                     {/* Modal Content */}
                     <div 
-                        className="relative bg-[#0f111a] border border-gray-700 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl p-6 md:p-10 shadow-2xl"
+                        className="relative bg-[#0f111a] border border-gray-700 w-full max-w-4xl max-h-[90vh] overflow-y-auto modal-scroll rounded-3xl p-6 md:p-10 shadow-2xl"
                         onClick={(e) => e.stopPropagation()} // Stop clicks inside modal from closing it
                     >
                         {/* Sticky Close button wrapper */}
