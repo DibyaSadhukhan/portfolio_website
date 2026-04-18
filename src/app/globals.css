@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+/* Terminal-Style Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080806;
+  border-left: 1px solid #1f2937; /* gray-800 boundary */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151; /* blocky terminal gray */
+  border-radius: 0px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa; /* neon blue terminal highlight */
+}
+
+/* For Firefox compatibility */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #374151 #080806;
+}

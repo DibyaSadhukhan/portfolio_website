@@ -79,21 +79,21 @@ export default function Contact() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-400 mb-2">Name *</label>
-                                    <input required type="text" name="name" value={formData.name} onChange={handleChange} className="w-full bg-[#0f111a] border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" placeholder="John Doe" />
+                                    <input required type="text" name="name" value={formData.name} onChange={handleChange} className="w-full bg-[#0f111a] border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" placeholder="Bruce Wayne" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-400 mb-2">Email *</label>
-                                    <input required type="email" name="email" value={formData.email} onChange={handleChange} className="w-full bg-[#0f111a] border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" placeholder="john@example.com" />
+                                    <input required type="email" name="email" value={formData.email} onChange={handleChange} className="w-full bg-[#0f111a] border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" placeholder="bruce@wayne.com" />
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-400 mb-2">Phone</label>
-                                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full bg-[#0f111a] border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" placeholder="+1 (555) 000-0000" />
+                                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full bg-[#0f111a] border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" placeholder="+919000000000" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-400 mb-2">Company</label>
-                                    <input type="text" name="company" value={formData.company} onChange={handleChange} className="w-full bg-[#0f111a] border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" placeholder="Acme Inc." />
+                                    <input type="text" name="company" value={formData.company} onChange={handleChange} className="w-full bg-[#0f111a] border border-gray-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" placeholder="Wayne Enterprises" />
                                 </div>
                             </div>
 

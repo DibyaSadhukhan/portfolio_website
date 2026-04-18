@@ -38,16 +38,25 @@ export default function Skills() {
                             <div className="flex flex-col gap-6">
                                 {block.items.map((item) => (
                                     <div key={item.name}>
-                                        <div className="flex justify-between text-sm mb-2 text-gray-300">
+                                        <div className="flex justify-between text-sm mb-1 text-gray-300 font-mono">
                                             <span>{item.name}</span>
-                                            <span className="text-gray-500 font-mono">{item.value}%</span>
+                                            <span className="text-purple-400 font-bold">{item.value}%</span>
                                         </div>
-                                        {/* Progress Bar! */}
-                                        <div className="w-full bg-black/50 rounded-full h-1.5 border border-gray-800">
-                                            <div className="bg-purple-500 h-1.5 rounded-full relative" style={{ width: `${item.value}%` }}>
-                                                {/* Glow effect on the tip of the progress bar */}
-                                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-[0_0_10px_2px_rgba(168,85,247,0.8)]"></div>
+                                        {/* PowerShell Text Based Progress Bar */}
+                                        <div className="w-full h-6 flex items-center relative font-mono text-base md:text-lg overflow-hidden select-none">
+                                            <span className="text-gray-600 font-bold mr-2">[</span>
+                                            <div className="flex-1 h-full relative overflow-hidden">
+                                                {/* Background empty dashes */}
+                                                <div className="absolute left-0 inset-y-0 flex items-center text-gray-800/80 whitespace-nowrap overflow-hidden font-bold">
+                                                    {"-".repeat(150)}
+                                                </div>
+                                                {/* Foreground filled dashes with neon shadow */}
+                                                <div className="absolute left-0 inset-y-0 flex items-center text-purple-500 whitespace-nowrap overflow-hidden drop-shadow-[0_0_6px_rgba(168,85,247,0.8)] font-bold z-10" 
+                                                     style={{ width: `${item.value}%` }}>
+                                                    {"-".repeat(150)}
+                                                </div>
                                             </div>
+                                            <span className="text-gray-600 font-bold ml-2">]</span>
                                         </div>
                                     </div>
                                 ))}
