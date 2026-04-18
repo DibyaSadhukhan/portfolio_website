@@ -110,7 +110,7 @@ export default function Hero() {
                                 </div>
                                 <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 items-center">
                                     <span className="text-sm text-gray-300">{core_skills[1].items[0].name}</span>
-                                    <span className="text-sm text-gray-300">{core_skills[1].items[0].name}</span>
+                                    <span className="text-sm text-gray-300">{core_skills[1].items[1].name}</span>
                                 </div>
                             </div>
 
