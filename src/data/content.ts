@@ -291,5 +291,35 @@ export const projects_data = [
         ],
         "github": "NDA",
         "live": "NDA"
+    },
+    {
+        "id": 6,
+        "title": "Microservices-Based eCommerce Platform (n8n Deployable)",
+        "category": "Automation / Microservices / Backend Systems",
+        "description": "Built a fully modular eCommerce platform powered by n8n workflows, enabling one-click deployment and server-agnostic scalability through microservices architecture.",
+        "tools": ["n8n", "Node.js", "APIs", "Microservices", "JavaScript", "SQL", "System Design", "Cloud"],
+        "long_description": [
+            "Designed and developed a fully functional eCommerce platform built on top of n8n, leveraging a microservices architecture to enable flexible, scalable, and server-agnostic deployments.",
+
+            "🔹 Architecture & Design\nThe system was architected as a collection of loosely coupled microservices, each responsible for core eCommerce functionalities such as product management, order processing, user handling, and payment workflows.",
+
+            "🔹 n8n as Orchestration Layer\nn8n was used as the central orchestration engine, coordinating communication between microservices, handling business logic, and enabling event-driven workflows across the platform.",
+
+            "🔹 One-Click Deployment System\nDesigned a deployment mechanism where the entire platform can be provisioned by importing and executing a single n8n pipeline, making it highly portable and easy to set up on any server environment.",
+
+            "🔹 API-Driven Microservices\nBuilt modular services exposed via APIs to handle individual responsibilities, allowing independent scaling, updates, and integration with external systems.",
+
+            "🔹 Server-Agnostic Infrastructure\nEnsured compatibility across different hosting environments by decoupling services from infrastructure dependencies, enabling deployment on any server supporting n8n.",
+
+            "🔹 Automation & Workflow Logic\nImplemented automated workflows for order lifecycle management, inventory updates, payment triggers, and notifications, reducing the need for manual intervention.",
+
+            "🔹 Performance & Scalability\n- Microservices design enables horizontal scaling of individual components\n- Event-driven workflows improve system responsiveness\n- Modular structure allows easy extension of features",
+
+            "🔹 Reliability & Maintainability\n- Decoupled services reduce system-wide failure impact\n- Centralized orchestration simplifies debugging and monitoring\n- Version-controlled pipelines enable easy updates and rollback",
+
+            "🔹 Key Learnings / Engineering Insights\n- Workflow orchestration tools like n8n can be extended beyond automation into full application platforms\n- Microservices architecture significantly improves flexibility and deployment portability\n- Designing for modularity enables rapid iteration and feature expansion\n- Infrastructure-agnostic systems are highly valuable for diverse deployment environments"
+        ],
+        "github": "NDA",
+        "live": "NDA"
     }
 ];
