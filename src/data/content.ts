@@ -321,5 +321,35 @@ export const projects_data = [
         ],
         "github": "NDA",
         "live": "NDA"
-    }
+    },
+    {
+    "id": 7,
+    "title": "AI Therapist Training Simulator & Feedback System",
+    "category": "GenAI / NLP / Machine Learning",
+    "description": "Trained an AI model on therapy session transcripts to simulate distressed clients, enabling therapist training with automated evaluation and expert feedback loops.",
+    "tools": ["Python", "LLMs", "NLP", "Fine-tuning", "Prompt Engineering", "APIs", "Data Processing"],
+    "long_description": [
+        "Designed and developed an AI-driven therapist training system that simulates distressed clients using models trained on real therapy session transcripts, enabling scalable and consistent training environments.",
+        
+        "🔹 Data Processing & Training\nCollected and processed anonymized therapy session transcripts, performing cleaning, structuring, and transformation to create high-quality training datasets for model development.",
+        
+        "🔹 Model Development\nTrained and fine-tuned LLM-based models to replicate realistic client behavior, including emotional expression, distress patterns, and conversational dynamics observed in therapy sessions.",
+        
+        "🔹 Conversational Simulation Engine\nBuilt an interactive system where therapists can engage with the AI as if interacting with a real client, allowing practice in handling various emotional and psychological scenarios.",
+        
+        "🔹 Evaluation & Feedback Loop\nIntegrated a multi-stage evaluation pipeline where therapist responses are reviewed by senior therapists, and feedback is captured, summarized, and structured for improvement.",
+        
+        "🔹 Feedback Automation\nDeveloped systems to aggregate expert feedback and generate actionable insights for therapists, enabling continuous learning and performance tracking.",
+        
+        "🔹 System Architecture\n- Modular pipeline separating simulation, evaluation, and feedback stages\n- API-based communication between components\n- Scalable design to support multiple concurrent training sessions",
+        
+        "🔹 Performance & Optimization\n- Optimized prompts and model behavior for realistic and consistent simulations\n- Reduced response latency for real-time conversational experience\n- Improved dataset quality to enhance model accuracy",
+        
+        "🔹 Reliability & Safety\n- Ensured anonymization of sensitive data\n- Controlled model outputs to maintain ethical and safe interactions\n- Incorporated human-in-the-loop validation for feedback accuracy",
+        
+        "🔹 Key Learnings / Engineering Insights\n- High-quality training data is critical for realistic conversational AI\n- Human feedback loops significantly improve system effectiveness\n- Simulation systems require careful balance between realism and control\n- Combining AI with expert evaluation creates scalable training ecosystems"
+    ],
+    "github": "NDA",
+    "live": "NDA"
+}
 ];
